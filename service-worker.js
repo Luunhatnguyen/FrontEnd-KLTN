@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/Luunhatnguyen/FrontEnd-KLTN/precache-manifest.246cb252b8079d27fa5aa8c391371d7d.js"
+  "/FrontEnd-KLTN/precache-manifest.d947f07de329f872c5f06141535c15b5.js"
 );
 
 workbox.clientsClaim();
@@ -28,7 +28,7 @@ self.__precacheManifest = [].concat(self.__precacheManifest || []);
 workbox.precaching.suppressWarnings();
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
 
-workbox.routing.registerNavigationRoute("/Luunhatnguyen/FrontEnd-KLTN/index.html", {
+workbox.routing.registerNavigationRoute("/FrontEnd-KLTN/index.html", {
   
   blacklist: [/^\/_/,/\/[^/]+\.[^/]+$/],
 });
