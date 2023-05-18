@@ -41,14 +41,13 @@ function LoginAdmin() {
         });
         // setApprove(res.data);
         // console.log(res.data);
-
       } catch (error) {
         console.error(error);
       }
     };
     loadRouter();
   }, []);
- 
+
   console.log(approve);
   const login = async (event) => {
     event.preventDefault();
@@ -93,6 +92,13 @@ function LoginAdmin() {
           "error"
         );
       }
+    } else if (approve == "NOT APPROVE") {
+      setOpen(true);
+      createMessage(
+        "Lỗi",
+        "Tài Khoản nhà xe của bạn không được chấp nhận!!",
+        "error"
+      );
     } else {
       setOpen(true);
       createMessage(

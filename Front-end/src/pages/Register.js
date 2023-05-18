@@ -77,18 +77,18 @@ export default function Register(props) {
       formData.append("isCarrier", isCarrier);
 
       try {
-          await API.post(endpoints["users"], formData, {
-            headers: {
-              "Content-Type": "multipart/form-data",
-            },
-          });
-          setOpen(true);
-          createMessage(
-            "Thành công",
-            "Đăng kí thành công. Hãy đăng nhập để sử dụng tài khoản",
-            "success"
-          );
-          navigate("/login");
+        await API.post(endpoints["users"], formData, {
+          headers: {
+            "Content-Type": "multipart/form-data",
+          },
+        });
+        setOpen(true);
+        createMessage(
+          "Thành công",
+          "Đăng kí thành công. Hãy đăng nhập để sử dụng tài khoản",
+          "success"
+        );
+        navigate("/login");
       } catch (error) {
         console.error(error);
         setOpen(true);
@@ -229,7 +229,7 @@ export default function Register(props) {
                       <label>{t("phone")}</label>
                       <input
                         type="number"
-                        placeholder="123-456-6789"
+                        placeholder="1234567890"
                         className="form-control "
                         style={{ height: "60px" }}
                         pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"
@@ -261,6 +261,7 @@ export default function Register(props) {
                     class="col-lg-12 col-md-12 col-sm-12 column"
                     id="password"
                     label={t("password")}
+                    placeholder="Hãy đặt mk tối thiểu 8 ký tự"
                     type="password"
                     value={password}
                     change={(event) => setPassword(event.target.value)}

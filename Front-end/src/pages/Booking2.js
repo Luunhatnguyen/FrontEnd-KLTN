@@ -96,8 +96,9 @@ function Booking2(props) {
     const email = props.userInfo.email;
     const phone = props.userInfo.number;
     const timeTable = props.timeTableID;
-    
+
     const amount = props.total;
+
     if (window.confirm("Bạn có chắc muốn thanh toán không?") == true) {
       let booking = await API.post(endpoints["booking"], {
         headers: "Access-Control-Allow-Origin: http://127.0.0.1:8000/",
@@ -110,7 +111,7 @@ function Booking2(props) {
 
       let res = await API.get(endpoints["last-booking"]);
       let id = res.data.id;
-
+      // console.log(amount + name + id);
       if (type == "momo") {
         let bookinghistorys = await API.post(endpoints["booking-history"], {
           headers: "Access-Control-Allow-Origin: http://127.0.0.1:8000/",
@@ -166,7 +167,11 @@ function Booking2(props) {
         if (bookinghistorys.status === 201) {
           alert("Bạn đã thanh toán thành công!");
           setOpen(true);
-          createMessage("Thành công", "Bạn đã thanh toán thành công!", "success");
+          createMessage(
+            "Thành công",
+            "Bạn đã thanh toán thành công!",
+            "success"
+          );
           navigate("/route-detail/booking-3");
         } else {
           setOpen(true);
@@ -220,7 +225,8 @@ function Booking2(props) {
                     <span>2.</span> {t("thanhtoanhoa")}
                   </li>
                   <li>
-                    <span>3.</span>{t("xacnhan1")}
+                    <span>3.</span>
+                    {t("xacnhan1")}
                   </li>
                 </ul>
                 <div className="inner-box">
@@ -265,7 +271,8 @@ function Booking2(props) {
                             <div className="form-group">
                               <label> {t("time")}:</label>
                               <label class="form-control">
-                                {timeTable.time} {t("thongtinchuyen")} {t("ngay")}{" "}
+                                {timeTable.time} {t("thongtinchuyen")}{" "}
+                                {t("ngay")}{" "}
                                 <Moment format="DD/MM/YYYY">
                                   {timeTable.date}
                                 </Moment>
@@ -323,7 +330,7 @@ function Booking2(props) {
                         marginTop: "25px",
                       }}
                     >
-                       {t("choncach")}
+                      {t("choncach")}
                     </h4>
                     <div className="row clearfix">
                       <div className="col-lg-6 col-md-6 col-sm-12 column">
@@ -338,7 +345,7 @@ function Booking2(props) {
                               value="2"
                               onClick={() => setVisible(1)}
                               control={<Radio />}
-                              label= {t("thanhtoantq")}
+                              label={t("thanhtoantq")}
                             />
                             <FormControlLabel
                               value="1"
@@ -346,7 +353,7 @@ function Booking2(props) {
                               control={<Radio />}
                               label={
                                 <>
-                                   Ví {" "}
+                                  Ví{" "}
                                   <img
                                     style={{ width: "30px" }}
                                     src="https://developers.momo.vn/v2/images/logo.svg"
@@ -413,27 +420,27 @@ function Booking2(props) {
                             }}
                           >
                             <i className="fas fa-angle-left" />
-                            {t("quaylai")} 
+                            {t("quaylai")}
                           </button>
                           {visible === 1 && (
                             <button
                               type="submit"
                               className="theme-btn1 confirm"
                               onClick={() => pay("offline")}
-                              style={{  background: '#00613d !important'}}
+                              style={{ background: "#00613d !important" }}
                             >
-                               {t("thanhtoan")}
+                              {t("thanhtoan")}
                               <i className="fas fa-angle-right" />
                             </button>
                           )}
                           {visible === 2 && (
-                            <button 
+                            <button
                               type="submit"
                               className="theme-btn1 confirm"
                               onClick={() => pay("momo")}
-                              style={{  background: "#00613d !important"}}
+                              style={{ background: "#00613d !important" }}
                             >
-                                {t("momo")}
+                              {t("momo")}
                               <i className="fas fa-angle-right" />
                             </button>
                           )}

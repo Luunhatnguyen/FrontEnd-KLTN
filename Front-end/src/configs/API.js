@@ -41,9 +41,11 @@ export let endpoints = {
   "last-booking": "/bookings/last-book/",
   "booking-history-by-user": (userId) =>
     `/bookings/${userId}/booking-history-by-user/`,
-  "get_carrier_by_userID": (userId) => `/carrierview/${userId}/get_carrier_by_userID/`,
-  "get_bus_by_carrierID": (carrierId) =>`/carrier/${carrierId}/get_bus_by_carrierID/`,
-  "get_route_by_bus": (garagesId) =>`/busroutes/${garagesId}/get_route_by_bus/`,
+  get_carrier_by_userID: (userId) =>
+    `/carrierview/${userId}/get_carrier_by_userID/`,
+  get_bus_by_carrierID: (carrierId) =>
+    `/carrier/${carrierId}/get_bus_by_carrierID/`,
+  get_route_by_bus: (garagesId) => `/busroutes/${garagesId}/get_route_by_bus/`,
   "like-busroute": (busrouteId) => `/busroutes/${busrouteId}/like/`,
   "busroute-comments": (busrouteId) => `/busroutes/${busrouteId}/comments/`,
   ratings: "/ratings/",

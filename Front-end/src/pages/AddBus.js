@@ -95,6 +95,7 @@ const AddArtical = (props) => {
     setGarageID("");
     setTypeBusID("");
     setCarrierID("");
+
   };
 
   return (

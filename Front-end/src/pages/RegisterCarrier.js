@@ -98,6 +98,7 @@ export default function Register(props) {
       method: "post",
       url: "http://localhost:8000/carrier/",
       data: formData,
+      
     })
       .then((response) => {
         console.log(response.data);

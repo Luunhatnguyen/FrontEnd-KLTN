@@ -6,7 +6,7 @@ import shape12 from "../image/shape/shape-12.png";
 import shape13 from "../image/shape/shape-13.png";
 import team1 from "../assets/img/logo.png";
 import video1 from "../assets/img/Bus-Station-High-Quality-Wallpaper.jpg";
-import about3 from "../assets/img/banner-mockup-bus-station-stop-departing-red-blank-poster-mock-up-inside-advertising-empty-template-public-141508844.jpg";
+import about3 from "../assets/img/banner.jpg";
 import { Link } from "react-router-dom";
 import Header from "../Layout/Header";
 export default function About() {

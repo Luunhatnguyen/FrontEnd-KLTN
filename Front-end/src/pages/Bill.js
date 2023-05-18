@@ -281,7 +281,7 @@ function ArticalItem(props) {
                       <div class="container">
                         <div class="col-md-12">
                           <div class="text-center">
-                            <img src={travellogo} alt="ImageLogo" />
+                            <img src={props.bill.timeTable.busRouteID.routeID.image} alt="ImageLogo" />
                             <p class="pt-2">{t("cty")}</p>
                           </div>
                         </div>
